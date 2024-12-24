@@ -1,0 +1,16 @@
+#root {
+  max-width: 1280px;
+  padding: 2rem;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  border: 1px solid red;
+}
+
+/* body { */
+/*   margin: 0; */
+/*   min-width: 320px; */
+/*   min-height: 100vh; */
+/*   background-image: url("./assets/addie.jpg"); */
+/*   background-size: cover; */
+/* } */
