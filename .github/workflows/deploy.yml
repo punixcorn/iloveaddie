@@ -23,9 +23,6 @@ jobs:
       - name: dependency
         uses: actions/download-artifact@v4
         
-      - name: another Dependency
-        uses: actions/upload-pages-artifact@v3
-        
       - name: Build project
         run: npm run build
 
