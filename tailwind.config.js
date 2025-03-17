@@ -8,6 +8,7 @@ export default {
       korean_font: ["East Sea Dokdo", "serif"],
       body_font: ["Playwrite AU VIC Guides", "serif"],
       poppins_font: ["Poppins", "serif"],
+      hand_written: ["Playwrite HU"],
     },
     extend: {},
   },
