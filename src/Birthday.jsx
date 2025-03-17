@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import confetti from "canvas-confetti";
+import { ReactFloatingBalloons } from "react-floating-balloons";
 
 function BirthdayPage() {
   const [showVideo, setShowVideo] = useState(false);
@@ -15,6 +17,42 @@ function BirthdayPage() {
     "I love you soo soo Much",
   ];
 
+  useEffect(() => {
+    //const hasVisted = localStorage.getItem("visited");
+    const hasVisted = false;
+
+    const emojis = [
+      "💖",
+      "💝",
+      "💗",
+      "💕",
+      "❤️",
+      "💜",
+      "🎉",
+      "🎊",
+      "🥳",
+      "🎁",
+      "🌟",
+    ];
+
+    const confettiShapes = emojis.map((emoji) =>
+      confetti.shapeFromText({ text: emoji, scalar: 1 }),
+    );
+
+    setTimeout(() => {
+      if (!hasVisted) {
+        confetti({
+          particleCount: 1000,
+          spread: 100,
+          gravity: 0.5,
+          origin: { y: 1 },
+          scalar: 1,
+          shapes: confettiShapes,
+        });
+      }
+      //localStorage.setItem("visited", true);
+    }, 1000);
+  }, []);
   const getRandomInt = (min, max) => {
     const minCeiled = Math.ceil(min);
     const maxFloored = Math.floor(max - 1);
@@ -79,7 +117,29 @@ function BirthdayPage() {
         <h2 className="text-3xl text-white opacity-70">ex=elebrate!</h2>
       </div>
 */}
+      {/* Balloons overlay 
+      <div className="absolute inset-0 w-full h-full flex justify-center items-left pointer-events-none overflow-hidden">
+        <ReactFloatingBalloons
+          count={25} // More balloons
+          msgText="Happy Birthday Addie!"
+          colors={["red", "yellow", "purple", "blue"]}
+          popVolumeLevel={1}
+          style={{ width: "100vw", height: "100vh" }} // Ensures full coverage
+        />
+      </div>*/}
 
+      {/* Balloons overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ transform: "translateX(-5%)" }}
+      >
+        <ReactFloatingBalloons
+          count={20} // More balloons
+          msgText="Happy Birthday Addie!"
+          colors={["red", "yellow", "purple", "blue"]}
+          popVolumeLevel={0.5}
+        />
+      </div>
       {/* Main content container */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-1 text-center">
         <header className="mb-8">
