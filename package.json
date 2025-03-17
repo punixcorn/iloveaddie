@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
+    "install": "npm install --force",
     "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
