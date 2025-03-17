@@ -34,7 +34,8 @@ function BirthdayPage() {
 
   // Function to fetch a random "cat birthday gif" from GIPHY
   const fetchRandomCatBirthdayGif = async () => {
-    const apiKey = "BdZzn86IcbRTPn4fPwyOZa3wsOuAhbQC"; // Replace with your GIPHY API key
+    // const apiKey = "BdZzn86IcbRTPn4fPwyOZa3wsOuAhbQC"; // Replace with your GIPHY API key
+    const apiKey = import.meta.env.VITE_GIPHY_API_KEY;
     try {
       const response = await fetch(
         `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=cat+birthday&rating=G`,
