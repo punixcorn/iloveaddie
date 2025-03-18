@@ -18,7 +18,8 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+      - uses: bahmutov/npm-install@v1
+      - run: npm install --force
         
       - name: dependency
         uses: actions/download-artifact@v4
